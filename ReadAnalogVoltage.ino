@@ -1,12 +1,12 @@
 
 void setup() {
-  // initialize serial communication at 9600 bits per second:
+  // initialise serial communications:
   pinMode(NINA_RESETN, OUTPUT);         
   digitalWrite(NINA_RESETN, LOW);
   Serial.begin(115200);
   SerialNina.begin(115200);
   
-  int i = 0;
+  int i = 0;  // measurement number (index)
   
   while (true) {
     int sensorValue = analogRead(A0);
@@ -23,9 +23,9 @@ void setup() {
       SerialNina.write(Serial.read());}
     /*
     if (SerialNina.available()) {
-      Serial.write(SerialNina.read());}*/
+      Serial.write(SerialNina.read());}*/  // for two-way comms - disable for now
       
     i += 1;
-    delay(1000);
+    delay(1000);  // time delay between readings = 1000 ms = 1 s
   };
 };

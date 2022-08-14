@@ -9,7 +9,7 @@ void setup() {
   int i = 0;  // measurement number (index)
   
   while (true) {
-    // convert sensor reading to temperature using the formula given in the datasheet
+    // convert sensor reading to temperature using the formula given in the datasheet (AD22100.pdf, pg. 7)
     int sensorValue = analogRead(A0);
     float voltage = sensorValue * (5.0 / 1023.0);
     float temperature = (voltage - 1.375) / 0.0225;

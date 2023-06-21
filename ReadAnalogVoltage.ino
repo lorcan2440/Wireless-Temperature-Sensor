@@ -1,3 +1,5 @@
+// requires: <WiFiNINA.h>
+
 void setup() {
   // initialize serial communication at 115200 bits per second:
   pinMode(NINA_RESETN, OUTPUT);

@@ -1,7 +1,8 @@
-// requires: <WiFiNINA.h>
+#include <Arduino.h>
+#include <WiFiNINA.h>
 
 void setup() {
-  // initialize serial communication at 115200 bits per second:
+  // initialize serial communications
   pinMode(NINA_RESETN, OUTPUT);
   digitalWrite(NINA_RESETN, LOW);
   Serial.begin(115200);
@@ -9,7 +10,7 @@ void setup() {
 }
 
 void loop() {
-  static int i = 0;  // Static variable to retain the value of 'i' between function calls
+  static int i = 0;  // static variable, retain between calls
 
   int sensorValue = analogRead(A0);
   byte packet[2 * sizeof(int)];
